@@ -13,7 +13,8 @@ const rollupConfig = defineConfig([
     input: "src/index.ts",
     output: {
       dir: "dist",
-      format: "commonjs"
+      format: "cjs",
+      minifyInternalExports: true
     },
     plugins: [
       esbuild({
@@ -27,13 +28,18 @@ const rollupConfig = defineConfig([
         minify: true,
         target: "node14.13.0", // default, or 'es20XX', 'esnext'
         tsconfig: "tsconfig.json",
+        loaders: {
+          ".json": "json"
+          // // Enable JSX in .js files too
+          // '.js': 'jsx',
+        }
       }),
       cjs(),
       json(),
       shebang({ shebang: "#!/usr/bin/env node" }),
-      nodeResolve({
-        exportConditions: ["node"] // https://github.com/uuidjs/uuid/issues/544#issuecomment-740394448
-      })
+      // nodeResolve({
+      //   exportConditions: ["node"] // https://github.com/uuidjs/uuid/issues/544#issuecomment-740394448
+      // })
     ],
     external: [
       "fs/promises",
