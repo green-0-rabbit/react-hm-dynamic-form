@@ -1,4 +1,4 @@
-import { isResolved, path as p } from "../../utils";
+import { isResolved, path as p } from "../utils";
 import { fs } from "../services";
 import { FsWriteOptions } from "../types";
 

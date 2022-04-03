@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/dot-notation */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Command, InvalidArgumentError } from "commander";
-import { gray, red, white, yellow } from "../utils";
+import { gray, red, white, yellow } from "./utils";
 import {
   buildActions,
   fsWriteActions,

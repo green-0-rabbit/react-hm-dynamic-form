@@ -12,11 +12,6 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    },
     "types": [
       "jest",
       "node"

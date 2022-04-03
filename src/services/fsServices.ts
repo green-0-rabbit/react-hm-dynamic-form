@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as fs from "fs/promises";
 import { PathLike } from "fs";
-import { errorResponse, isResolved, resAsync, response } from "@/utils";
+import { errorResponse, isResolved, resAsync, response } from "../utils";
 
 type Data = Parameters<typeof fs.writeFile>[1];
 type Options = Parameters<typeof fs.writeFile>[2];

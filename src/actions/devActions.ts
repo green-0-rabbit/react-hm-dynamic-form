@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import { isResolved, path as p } from "../../utils";
+import { isResolved, path as p } from "../utils";
 import { dev, git, fs } from "../services";
 import { DevOptions } from "../types";
 

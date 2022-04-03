@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { resAsync } from "@/utils";
-import bootstrap from "./cli/commands";
+import bootstrap from "./commands";
+import { resAsync } from "./utils";
 
 resAsync(async () => {
   const program = bootstrap();

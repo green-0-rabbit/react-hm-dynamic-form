@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-restricted-syntax */
-import { isResolved, path as p } from "../../utils";
+import { isResolved, path as p } from "../utils";
 import { build, git, fs } from "../services";
 import { BuildOptions } from "../types";
 

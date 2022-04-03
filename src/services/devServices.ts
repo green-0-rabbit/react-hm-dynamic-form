@@ -2,8 +2,8 @@
 import { MergedRollupOptions } from "rollup";
 import commonjs from "@rollup/plugin-commonjs";
 import esbuild from "rollup-plugin-esbuild";
-import { path } from "@/utils";
-import rollupBuild from "../../rollup";
+import { path } from "../utils";
+import rollupBuild from "../rollup";
 
 /**
  * dev hooks

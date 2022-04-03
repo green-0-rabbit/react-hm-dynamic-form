@@ -3,8 +3,8 @@ import nodeResolve from "@rollup/plugin-node-resolve";
 import cjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import esbuild from "rollup-plugin-esbuild";
-import { path } from "@/utils";
-import rollupBuild from "../../rollup";
+import { path } from "../utils";
+import rollupBuild from "../rollup";
 //  @see https://github.com/egoist/rollup-plugin-esbuild/issues/70#issuecomment-742691119
 // To support absolute and alias @see => https://github.com/egoist/rollup-plugin-esbuild/issues/70#issuecomment-742691119
 /**

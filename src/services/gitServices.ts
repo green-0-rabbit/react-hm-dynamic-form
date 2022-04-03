@@ -2,7 +2,7 @@
 import fs from "fs";
 import util from "util";
 import * as git from "isomorphic-git";
-import { errorResponse, path, resAsync, response } from "@/utils";
+import { errorResponse, path, resAsync, response } from "../utils";
 import { ReturnTypeAsync } from "../types/common";
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const exec = util.promisify(require("child_process").exec);
