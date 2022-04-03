@@ -8,7 +8,8 @@
   },
   "scripts": {
     "prepare": "npm run build",
-    "build": "shx rm -rf dist && rollup -c"
+    "build": "shx rm -rf dist && rollup -c",
+    "lint": "eslint src --max-warnings=0"
   },
   "author": "kenneth ag",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "@babel/core": "^7.16.12",
     "@babel/plugin-transform-modules-commonjs": "^7.16.8",
     "@babel/preset-env": "^7.16.11",
+    "@rollup/plugin-alias": "^3.1.9",
     "@rollup/plugin-commonjs": "^21.0.3",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.1.3",
@@ -49,5 +51,9 @@
     "ts-node": "^10.4.0",
     "tsconfig-paths": "^3.12.0",
     "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "pretty-bytes": "^6.0.0",
+    "pretty-ms": "^7.0.1"
   }
 }

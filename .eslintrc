@@ -25,6 +25,7 @@
   ],
   "rules": {
     "no-console": "off",
+    "import/extensions": "off",
     "linebreak-style": "off",
     "object-curly-newline": "off",
     "operator-linebreak": "off",
@@ -33,6 +34,7 @@
     "@typescript-eslint/indent": "off",
     "comma-dangle": "off",
     "@typescript-eslint/comma-dangle": "off",
+    "no-confusing-arrow": "off",
     "quotes": "off",
     "@typescript-eslint/quotes": "off",
     "import/no-extraneous-dependencies": "off",

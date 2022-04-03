@@ -1,7 +1,9 @@
 {
   "ts-node": {
     // Do not forget to `npm i -D tsconfig-paths`
-    "require": ["tsconfig-paths/register"]
+    "require": [
+      "tsconfig-paths/register"
+    ]
   },
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
@@ -10,6 +12,11 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "types": [
       "jest",
       "node"
@@ -22,7 +29,7 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitAny": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*.ts",

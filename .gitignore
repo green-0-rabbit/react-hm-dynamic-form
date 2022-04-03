@@ -2,5 +2,5 @@
 build/
 dist/
 node_modules/
-scripts
+scripts/
 #amplify-do-not-edit-end
