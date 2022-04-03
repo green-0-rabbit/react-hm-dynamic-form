@@ -9,7 +9,7 @@ const rollupConfig = defineConfig([
   {
     input: "src/index.ts",
     output: {
-      dir: "scripts",
+      dir: "dist",
       format: "commonjs"
     },
     plugins: [
@@ -19,7 +19,7 @@ const rollupConfig = defineConfig([
         //   "src/**/*.js",
         // ],
         sourceMap: false,
-        exclude: ["src/scripts/**/*.ts", "src/hooks/**/*.ts", "src/config.ts"],
+        exclude: ["node_modules"],
         minify: true,
         target: "node14.13.0", // default, or 'es20XX', 'esnext'
         tsconfig: "tsconfig.json",
