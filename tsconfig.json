@@ -9,7 +9,8 @@
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
     /* Language and Environment */
     "target": "ES2020",
-    "module": "commonjs",
+    "jsx": "react-jsx",
+    "module": "ESNext",
     "moduleResolution": "node",
     "baseUrl": ".",
     "types": [
@@ -24,7 +25,11 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitAny": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    // for emit declaration, with need rollup-plugin-dts
+    "declaration": true,
+    "declarationDir": "types",
+    "emitDeclarationOnly": true
   },
   "include": [
     "src/**/*.ts",

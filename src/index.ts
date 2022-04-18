@@ -1,9 +1,3 @@
-#!/usr/bin/env node
-import bootstrap from "./commands";
-import { resAsync } from "./utils";
+export * from "./components";
+export * from "./utils";
 
-resAsync(async () => {
-  const program = bootstrap();
-  await program.parseAsync();
-  process.exit(0);
-});

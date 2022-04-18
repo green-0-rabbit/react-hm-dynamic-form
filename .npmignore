@@ -1,0 +1,8 @@
+scripts
+src
+.editorconfig
+.eslintignore
+.eslintrc
+.prettierrc
+rollup.config.ts
+tsconfig.json

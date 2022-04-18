@@ -1,10 +1,18 @@
 {
   "env": {
+    "browser": true,
     "es2020": true,
+    "jest": true,
     "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   },
   "extends": [
     "eslint:recommended",
+    "plugin:react/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
@@ -15,33 +23,50 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 11,
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
   "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
     "prettier",
-    "@typescript-eslint"
+    "tailwindcss"
   ],
   "rules": {
-    "no-console": "off",
-    "import/extensions": "off",
-    "linebreak-style": "off",
+    "no-console": "warn",
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
     "@typescript-eslint/indent": "off",
+    "react/jsx-closing-bracket-location": "off",
+    "react/function-component-definition": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "linebreak-style": "off",
     "comma-dangle": "off",
     "@typescript-eslint/comma-dangle": "off",
+    "react/jsx-wrap-multilines": "off",
     "no-confusing-arrow": "off",
     "quotes": "off",
     "@typescript-eslint/quotes": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-curly-newline": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
     "import/no-extraneous-dependencies": "off",
+    "react/jsx-props-no-spreading": "off",
     "import/no-dynamic-require": "off",
     "global-require": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "off",
+    "react/jsx-fragments": "off",
+    "react/jsx-one-expression-per-line": "off",
     "prettier/prettier": [
       "error",
       {

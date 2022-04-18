@@ -2,5 +2,7 @@
 build/
 dist/
 node_modules/
-scripts/
+scripts/localPack.js
+react-dynamic-form
+react-hm-dynamic-form
 #amplify-do-not-edit-end
