@@ -39,6 +39,13 @@ export type SmartFieldsRenderInputParams = {
   ) => ReactElement<U>;
 } & PartialISmartField;
 
+/**
+ * type helper for DynamicFields renderFields
+ */
+ export type SmartFieldType<T extends InputType | string> = {
+  [K in Exclude<T, "list">]: SmartFieldsRenderInputParams["renderFields"];
+};
+
 export interface ISmartField<T> {
   /** inputKey is used for register, input id and array map key */
   inputKey: string;

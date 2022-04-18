@@ -9,13 +9,6 @@ export type PartialMethodsType = { methods: Omit<Methods, "handleSubmit"> };
 
 type Keys = Exclude<InputType, "list">;
 
-/**
- * type helper for DynamicFields renderFields
- */
-export type SmartFieldType<T extends InputType | string> = {
-  [K in Exclude<T, "list">]: ReactElement;
-};
-
 export type ErrorFormType = {
   type: string;
   message?: string;
