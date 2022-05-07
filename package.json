@@ -1,22 +1,18 @@
 {
   "name": "react-hm-dynamic-form",
   "version": "1.0.1",
-  "npmVersion": false,
   "description": "",
   "localPackageName": ".local-packages",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.mjs",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
-  "bin": {
-    "amplify-script": "dist/index.js"
-  },
   "scripts": {
     "build": "shx rm -rf dist && rollup -c",
     "build:local": "npm run build && npm run pack:local",
     "lint": "eslint src --max-warnings=0",
     "pack:local": "node scripts/localPack",
-    "publish": "npm run pack:local && npm publish react-hm-dynamic-form",
+    "publish": "npm run pack:local && npm publish react-hm-dynamic-form\\react-hm-dynamic-form-1.0.1.tgz",
     "release": "standard-version"
   },
   "author": "kenneth ag",
