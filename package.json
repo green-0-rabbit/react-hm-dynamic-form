@@ -1,6 +1,6 @@
 {
   "name": "react-hm-dynamic-form",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "",
   "localPackageName": ".local-packages",
   "main": "dist/index.cjs.js",
