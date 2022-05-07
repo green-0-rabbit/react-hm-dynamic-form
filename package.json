@@ -13,7 +13,7 @@
     "lint": "eslint src --max-warnings=0",
     "pack:local": "node scripts/localPack",
     "prepublishOnly": "npm run pack:local",
-    "publish": " npm publish .\\react-hm-dynamic-form\\react-hm-dynamic-form-1.0.1.tgz",
+    "publish": " npm publish ./react-hm-dynamic-form/",
     "release": "standard-version"
   },
   "author": "kenneth ag",
