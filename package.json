@@ -12,8 +12,6 @@
     "build:local": "npm run build && npm run pack:local",
     "lint": "eslint src --max-warnings=0",
     "pack:local": "node scripts/localPack",
-    "prepublishOnly": "npm run pack:local",
-    "publish": " npm publish ./react-hm-dynamic-form/",
     "release": "standard-version"
   },
   "author": "kenneth ag",
