@@ -1,9 +1,22 @@
 /* eslint-disable import/no-cycle */
 import { ReactElement } from "react";
 import { UseFieldArrayProps, UseFieldArrayReturn } from "react-hook-form";
-import { SmartFieldsRenderInputParams } from "../SmartField";
-import { ErrorFormType, FormFieldOption, InputType } from "./fieldType";
-import { FielMetaBaseProps } from "./formType";
+import { ISmartField, SmartFieldsRenderInputParams } from "../SmartField";
+import {
+  ErrorFormType,
+  FormFieldOption,
+  InputType,
+  PartialMethodsType,
+  FielMetaBaseProps
+} from "../types";
+
+export interface ISmartFieldList extends ISmartField<IListCustomPropsBase> {
+    useFieldArray: UseFieldArrayType;
+    renderSmartField: (params: RenderSmartFieldProps) => ReactElement;
+    renderFieldList: (params: IRenderFieldList) => ReactElement;
+    renderFormControl: SmartFieldsRenderInputParams["renderFormControl"];
+  }
+
 
 type ChildrenFieldsMeta = Omit<FielMetaBaseProps, "labelDirection">;
 
@@ -36,6 +49,7 @@ export interface IRenderFieldList {
   fieldsMeta: IFieldListMetaBase<any>[];
   hasErrors?: Record<string, ErrorFormType>[];
   listInputKey: string;
+  methods: PartialMethodsType["methods"];
   renderSmartField: (params: RenderSmartFieldProps) => ReactElement;
   arrayMethods: UseFieldArrayMethodsType;
 }

@@ -3,13 +3,10 @@ import FormGroup, { FormGroupComponentType } from "../FormGroup";
 import ISList from "../ISList";
 import GetSmartField from "../GetSmartField";
 import SmartFieldList from "../SmartFieldList";
-import {
-  IFieldGroupMetaBase,
-  IRenderFieldList,
-  UseFieldArrayType
-} from "../types";
+import { IFieldGroupMetaBase } from "../types";
 import { ISmartField, SmartFieldsRenderInputParams } from "../SmartField";
 import FieldsLayout from "../FieldsLayout";
+import { ISmartFieldList, UseFieldArrayType } from "../SmartFieldList";
 
 interface IDynamicForm<T extends object> {
   methods: ISmartField<T>["methods"];
@@ -22,7 +19,7 @@ interface IDynamicForm<T extends object> {
     group: Omit<IFieldGroupMetaBase<T>, "fieldsMeta">
   ) => FormGroupComponentType;
   renderFields: SmartFieldsRenderInputParams["renderFields"];
-  renderFieldList: (params: IRenderFieldList) => ReactElement;
+  renderFieldList?: ISmartFieldList["renderFieldList"];
   renderFormControl: SmartFieldsRenderInputParams["renderFormControl"];
   data?: any;
   useFieldArray?: UseFieldArrayType;

@@ -6,10 +6,7 @@ import { FormGroupComponentType } from "./types";
 
 const styles: Record<string, CSSProperties> = {
   container: {
-    marginBlock: "10px",
-    boxShadow: "0px 0px 21px 0px #5f5f5f1a",
-    padding: "10px",
-    borderRadius: "12px"
+    minWidth:"100%",
   },
   header: {
     marginBlock: "8px"

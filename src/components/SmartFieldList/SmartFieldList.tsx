@@ -4,20 +4,15 @@
 import React, { FC, ReactElement, useMemo } from "react";
 import getValuePath from "../../utils/dataUtils";
 import { ISmartField, SmartFieldsRenderInputParams } from "../SmartField/types";
+import { ErrorFormType } from "../types";
 import {
+  IListCustomPropsBase,
   UseFieldArrayType,
   RenderSmartFieldProps,
   IRenderFieldList,
-  ErrorFormType,
-  IListCustomPropsBase
-} from "../types";
+  ISmartFieldList
+} from "./types";
 
-interface ISmartFieldList extends ISmartField<IListCustomPropsBase> {
-  useFieldArray: UseFieldArrayType;
-  renderSmartField: (params: RenderSmartFieldProps) => ReactElement;
-  renderFieldList: (params: IRenderFieldList) => ReactElement;
-  renderFormControl: SmartFieldsRenderInputParams["renderFormControl"];
-}
 
 const SmartFieldList: FC<ISmartFieldList> = (props) => {
   const {
@@ -50,7 +45,8 @@ const SmartFieldList: FC<ISmartFieldList> = (props) => {
     hasErrors,
     listInputKey: inputKey,
     renderSmartField,
-    arrayMethods
+    arrayMethods,
+    methods
   };
 
   const formControlProps = {
