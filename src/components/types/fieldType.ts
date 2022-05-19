@@ -9,6 +9,9 @@ import { ReactElement, Ref } from "react";
 export type Methods<T extends Record<string, any>> = UseFormReturn<T>;
 export type FormFieldOption = RegisterOptions;
 
+/**
+ * T is related to Data
+ */
 export type PartialMethodsType<
   T extends Record<string, any> = Record<string, any>
 > = { methods: Omit<Methods<T>, "handleSubmit"> };

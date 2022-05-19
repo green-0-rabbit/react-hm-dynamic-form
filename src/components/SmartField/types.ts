@@ -19,7 +19,7 @@ type PartialISmartFormControl<T> = Omit<
 
 export interface SmartInputType<T>
   extends PartialISmartFormControl<T>,
-    PartialMethodsType<T> {
+    PartialMethodsType {
   helperId?: string;
 }
 
