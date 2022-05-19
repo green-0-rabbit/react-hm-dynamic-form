@@ -11,7 +11,7 @@ import {
 } from "../types";
 
 export interface ISmartFieldList extends ISmartField<IListCustomPropsBase> {
-  useFieldArray: UseFieldArrayType;
+  useFieldArray: UseFieldArrayType<IListCustomPropsBase>;
   renderSmartField: (params: RenderSmartFieldProps) => ReactElement;
   renderFieldList: (params: IRenderFieldList) => ReactElement;
   renderFormControl: SmartFieldsRenderInputParams["renderFormControl"];
@@ -53,6 +53,6 @@ export interface IRenderFieldList {
   arrayMethods: UseFieldArrayMethodsType;
 }
 
-export type UseFieldArrayType = (
-  params: UseFieldArrayProps<IListCustomPropsBase, any>
-) => UseFieldArrayReturn;
+export type UseFieldArrayType<
+  T extends Record<string, any> = Record<string, any>
+> = (params: UseFieldArrayProps<T, any>) => UseFieldArrayReturn;
