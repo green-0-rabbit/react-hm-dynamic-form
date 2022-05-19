@@ -12,18 +12,25 @@ export type PartialISmartField = Pick<
   "errors" | "isParentList" | "methods"
 >;
 
-type PartialISmartFormControl<T> = Omit<
-  IFormControl<T>,
-  "label" | "inputHelperText" | "renderInput" | "methods" | "isSubmitted"
+type PartialISmartFormControl<
+  T,
+  U extends Record<string, any> = Record<string, any>
+> = Omit<
+  IFormControl<T, U>,
+  "label" | "inputHelperText" | "renderInput" | "isSubmitted"
 >;
 
-export interface SmartInputType<T>
-  extends PartialISmartFormControl<T>,
-    PartialMethodsType {
+export interface SmartInputType<T> extends PartialISmartFormControl<T> {
   helperId?: string;
 }
 
-export interface IFormControl<T> extends Omit<ISmartField<T>, "data"> {
+/**
+ * T represent customProps and U reprensent Data
+ */
+export interface IFormControl<
+  T,
+  U extends Record<string, any> = Record<string, any>
+> extends Omit<ISmartField<T, U>, "data"> {
   renderInput: (inputProps: SmartInputType<T>) => React.ReactNode;
 }
 
@@ -42,11 +49,17 @@ export type SmartFieldsRenderInputParams = {
 /**
  * type helper for DynamicFields renderFields
  */
- export type SmartFieldType<T extends InputType | string> = {
+export type SmartFieldType<T extends InputType | string> = {
   [K in Exclude<T, "list">]: SmartFieldsRenderInputParams["renderFields"];
 };
 
-export interface ISmartField<T> {
+/**
+ * T represent customProps, U re
+ */
+export interface ISmartField<
+  T,
+  U extends Record<string, any> = Record<string, any>
+> {
   /** inputKey is used for register, input id and array map key */
   inputKey: string;
   /** label is used for the input displayed name */
@@ -64,7 +77,7 @@ export interface ISmartField<T> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   errors?: ErrorFormType | Record<string, any>;
 
-  methods: PartialMethodsType<T>["methods"];
+  methods: PartialMethodsType<U>["methods"];
 
   customProps: T;
 }

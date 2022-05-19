@@ -8,7 +8,7 @@ import { ISmartField, SmartFieldsRenderInputParams } from "../SmartField";
 import FieldsLayout from "../FieldsLayout";
 import { ISmartFieldList, UseFieldArrayType } from "../SmartFieldList";
 
-interface IDynamicForm<T extends object> {
+interface IDynamicForm<T extends Record<string, any>> {
   methods: ISmartField<T>["methods"];
   errors: ISmartField<T>["errors"];
   fieldsGroupMeta: IFieldGroupMetaBase<T>[];
