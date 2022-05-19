@@ -11,12 +11,11 @@ import {
 } from "../types";
 
 export interface ISmartFieldList extends ISmartField<IListCustomPropsBase> {
-    useFieldArray: UseFieldArrayType;
-    renderSmartField: (params: RenderSmartFieldProps) => ReactElement;
-    renderFieldList: (params: IRenderFieldList) => ReactElement;
-    renderFormControl: SmartFieldsRenderInputParams["renderFormControl"];
-  }
-
+  useFieldArray: UseFieldArrayType;
+  renderSmartField: (params: RenderSmartFieldProps) => ReactElement;
+  renderFieldList: (params: IRenderFieldList) => ReactElement;
+  renderFormControl: SmartFieldsRenderInputParams["renderFormControl"];
+}
 
 type ChildrenFieldsMeta = Omit<FielMetaBaseProps, "labelDirection">;
 
@@ -49,7 +48,7 @@ export interface IRenderFieldList {
   fieldsMeta: IFieldListMetaBase<any>[];
   hasErrors?: Record<string, ErrorFormType>[];
   listInputKey: string;
-  methods: PartialMethodsType["methods"];
+  methods: PartialMethodsType<any>["methods"];
   renderSmartField: (params: RenderSmartFieldProps) => ReactElement;
   arrayMethods: UseFieldArrayMethodsType;
 }

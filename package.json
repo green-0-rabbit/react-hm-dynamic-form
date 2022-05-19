@@ -8,11 +8,11 @@
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "shx rm -rf dist && rollup -c",
+    "build": "shx rm -rf dist && rollup -c && version",
     "build:local": "npm run build && npm run pack:local",
     "lint": "eslint src --max-warnings=0",
     "pack:local": "node scripts/localPack",
-    "release": "standard-version"
+    "version": "npm version minor"
   },
   "author": "kenneth ag",
   "license": "ISC",
