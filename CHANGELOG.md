@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.1](https://github.com/pyvvo/react-hm-dynamic-form/compare/v1.6.0...v1.6.1) (2022-05-19)
+
+
+### Bug Fixes
+
+* **types:** SmartField ([89c86df](https://github.com/pyvvo/react-hm-dynamic-form/commit/89c86df408e58681be398b99037ede7a05c074a0))
+
 ### [1.0.2](https://github.com/pyvvo/react-hm-dynamic-form/compare/v1.0.1...v1.0.2) (2022-05-07)
 
 
