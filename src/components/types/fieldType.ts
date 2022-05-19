@@ -1,11 +1,15 @@
 /* eslint-disable import/no-cycle */
-import { RegisterOptions, useFormContext } from "react-hook-form";
+import {
+  RegisterOptions,
+  useFormContext,
+  UseFormReturn
+} from "react-hook-form";
 import { ReactElement, Ref } from "react";
 
-export type Methods = ReturnType<typeof useFormContext>;
+export type Methods<T extends Record<string, any>> = UseFormReturn<T>;
 export type FormFieldOption = RegisterOptions;
 
-export type PartialMethodsType = { methods: Omit<Methods, "handleSubmit"> };
+export type PartialMethodsType<T extends Record<string, any>> = { methods: Omit<Methods<T>, "handleSubmit"> };
 
 type Keys = Exclude<InputType, "list">;
 

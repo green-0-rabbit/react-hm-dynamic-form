@@ -19,7 +19,7 @@ type PartialISmartFormControl<T> = Omit<
 
 export interface SmartInputType<T>
   extends PartialISmartFormControl<T>,
-    PartialMethodsType {
+    PartialMethodsType<T> {
   helperId?: string;
 }
 
@@ -64,7 +64,7 @@ export interface ISmartField<T> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   errors?: ErrorFormType | Record<string, any>;
 
-  methods: PartialMethodsType["methods"];
+  methods: PartialMethodsType<T>["methods"];
 
   customProps: T;
 }
