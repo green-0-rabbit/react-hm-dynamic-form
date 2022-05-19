@@ -9,8 +9,8 @@ import FieldsLayout from "../FieldsLayout";
 import { ISmartFieldList, UseFieldArrayType } from "../SmartFieldList";
 
 interface IDynamicForm<T extends Record<string, any>> {
-  methods: ISmartField<T>["methods"];
-  errors: ISmartField<T>["errors"];
+  methods: ISmartField<any, T>["methods"];
+  errors: ISmartField<any>["errors"];
   fieldsGroupMeta: IFieldGroupMetaBase<T>[];
   renderGroup?: (
     group: Omit<IFieldGroupMetaBase<T>, "fieldsMeta">
@@ -76,7 +76,7 @@ const DynamicFields = <T extends object>(props: IDynamicForm<T>) => {
                     field={
                       <GetSmartField
                         fieldMeta={fieldMeta}
-                        methods={methods}
+                        methods={methods as never}
                         errors={errors}
                         renderFields={renderFields}
                         renderFormControl={renderFormControl}
