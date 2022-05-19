@@ -8,7 +8,7 @@
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "shx rm -rf dist && rollup -c && version",
+    "build": "shx rm -rf dist && rollup -c &&  npm run version",
     "build:local": "npm run build && npm run pack:local",
     "lint": "eslint src --max-warnings=0",
     "pack:local": "node scripts/localPack",
