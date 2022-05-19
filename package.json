@@ -12,7 +12,7 @@
     "build:local": "npm run build && npm run pack:local",
     "lint": "eslint src --max-warnings=0",
     "pack:local": "node scripts/localPack",
-    "prepublish": "npm version minor"
+    "prepublishOnly": "npm version minor"
   },
   "author": "kenneth ag",
   "license": "ISC",
