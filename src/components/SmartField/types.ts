@@ -8,7 +8,7 @@ import {
 } from "../types/fieldType";
 
 export type PartialISmartField = Pick<
-  ISmartField<never>,
+  ISmartField<any>,
   "errors" | "isParentList" | "methods"
 >;
 
