@@ -1,18 +1,12 @@
 /* eslint-disable react/display-name */
 /* eslint-disable react/require-default-props */
 // eslint-disable-next-line object-curly-newline
-import React, { FC, ReactElement, useMemo } from "react";
+import { FC, useMemo } from "react";
 import getValuePath from "../../utils/dataUtils";
-import { ISmartField, SmartFieldsRenderInputParams } from "../SmartField/types";
 import { ErrorFormType } from "../types";
 import {
-  IListCustomPropsBase,
-  UseFieldArrayType,
-  RenderSmartFieldProps,
-  IRenderFieldList,
   ISmartFieldList
 } from "./types";
-
 
 const SmartFieldList: FC<ISmartFieldList> = (props) => {
   const {

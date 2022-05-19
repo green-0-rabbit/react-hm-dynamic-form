@@ -54,5 +54,5 @@ export interface IRenderFieldList {
 }
 
 export type UseFieldArrayType = (
-  params: UseFieldArrayProps
+  params: UseFieldArrayProps<IListCustomPropsBase, any>
 ) => UseFieldArrayReturn;
