@@ -4,9 +4,7 @@
 import { FC, useMemo } from "react";
 import getValuePath from "../../utils/dataUtils";
 import { ErrorFormType } from "../types";
-import {
-  ISmartFieldList
-} from "./types";
+import { ISmartFieldList } from "./types";
 
 const SmartFieldList: FC<ISmartFieldList> = (props) => {
   const {
@@ -46,7 +44,8 @@ const SmartFieldList: FC<ISmartFieldList> = (props) => {
   const formControlProps = {
     errors: hasErrors,
     ...rest,
-    renderInput: () => renderFieldList(renderFieldListProps)
+    renderInput: () =>
+      renderFieldList ? renderFieldList(renderFieldListProps) : undefined
   };
   return useMemo(
     () => (renderFormControl ? renderFormControl(formControlProps) : null),

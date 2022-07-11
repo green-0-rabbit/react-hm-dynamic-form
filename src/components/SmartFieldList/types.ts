@@ -11,9 +11,10 @@ import {
 } from "../types";
 
 export interface ISmartFieldList extends ISmartField<IListCustomPropsBase> {
+  
   useFieldArray: UseFieldArrayType;
   renderSmartField: (params: RenderSmartFieldProps) => ReactElement;
-  renderFieldList: (params: IRenderFieldList) => ReactElement;
+  renderFieldList?: (params: IRenderFieldList) => ReactElement;
   renderFormControl: SmartFieldsRenderInputParams["renderFormControl"];
 }
 

@@ -23,6 +23,7 @@ interface IDynamicForm<T extends Record<string, any>> {
   renderFormControl: SmartFieldsRenderInputParams["renderFormControl"];
   data?: any;
   useFieldArray?: UseFieldArrayType;
+  currentBreakpoint?: string;
 }
 
 const DynamicFields = <T extends object>(props: IDynamicForm<T>) => {
@@ -35,7 +36,8 @@ const DynamicFields = <T extends object>(props: IDynamicForm<T>) => {
     renderFields,
     renderFormControl,
     renderFieldList,
-    useFieldArray
+    useFieldArray,
+    currentBreakpoint
   } = props;
 
   return useMemo(
@@ -50,16 +52,17 @@ const DynamicFields = <T extends object>(props: IDynamicForm<T>) => {
               groupName={group.groupName}
               component={renderLayout ? renderLayout(group) : undefined}>
               {fieldsMeta.map((fieldMeta) => {
-                const { inputType, inputKey } = fieldMeta;
+                const { customProps, ...fieldMetaRest } = fieldMeta;
                 return (
                   <ISList
-                    key={inputKey}
-                    inputType={inputType}
+                    key={fieldMeta.inputKey}
+                    inputType={fieldMeta.inputType}
                     list={
                       useFieldArray ? (
                         <SmartFieldList
-                          {...(fieldMeta as never)}
-                          methods={methods}
+                          {...fieldMetaRest}
+                          customProps={customProps}
+                          methods={methods as any}
                           errors={errors}
                           useFieldArray={useFieldArray}
                           renderFieldList={renderFieldList}
@@ -90,7 +93,7 @@ const DynamicFields = <T extends object>(props: IDynamicForm<T>) => {
         ))}
       </Fragment>
     ),
-    [fieldsGroupMeta, errors]
+    [fieldsGroupMeta, errors, currentBreakpoint]
   );
 };
 export default DynamicFields;

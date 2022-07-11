@@ -156,6 +156,8 @@ export type DeepRequired<T> = {
   [P in keyof T]-?: DeepRequired<T[P]>;
 };
 
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & Partial<T>;
+
 // export type NonNullable<T> = Exclude<T, null | undefined>;
 // export type NoUndefinedField<T> = {
 //   [P in keyof T]-?: NoUndefinedField<NonNullable<T[P]>>;
