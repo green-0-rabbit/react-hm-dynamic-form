@@ -8,9 +8,8 @@ import path from "path";
 import pkg from "./package.json";
 import dts from "rollup-plugin-dts";
 
-const projectRootDir = path.resolve(__dirname);
+// const projectRootDir = path.resolve(__dirname);
 const name = "ReactHmDynamicForm";
-const globals = { react: "React" };
 const rollupConfig = defineConfig([
   {
     input: pkg.source,
